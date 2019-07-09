@@ -127,3 +127,55 @@ const compliments = [
 ];
 
 // JavaScript for daysss
+
+// Waiting for the page to load before interacting
+// Alternative way to wait for the page to load before running javascipt
+document.addEventListener('DOMContentLoaded', function(){
+  // Find the ul tag
+  const ulTag = document.querySelector('ul');
+  console.log(ulTag);
+
+  // For every item in the compliments array, I want to build a li
+  // with the correct structuring
+  // for(let index = 0; index < compliments.length; index+= 1){
+  //   // Create the item
+  //   const liTag = document.createElement("li")
+
+  //   const imgTag = document.createElement('img')
+  //   imgTag.src = "https://placekitten.com/450/250"
+
+  //   const h3Tag = document.createElement('h3')
+  //   h3Tag.innerText = compliments[index]
+
+  //   const divTag = document.createElement('div')
+  //   const citeTag = document.createElement('cite')
+  //   citeTag.innerText = "Hugged 0 times"
+
+  //   const buttonTag = document.createElement('button')
+  //   buttonTag.innerText = "🤗 it"
+
+  //   divTag.appendChild(citeTag)
+  //   divTag.appendChild(buttonTag)
+
+  //   liTag.appendChild(imgTag)
+  //   liTag.appendChild(h3Tag)
+  //   liTag.appendChild(divTag)
+
+  //     // Add it to the DOM
+  //   ulTag.appendChild(liTag)
+  // }
+  for(let index = 0; index < compliments.length; index += 1){
+    ulTag.innerHTML += `<li>
+    <img width="200" src='https://placekitten.com/500/250' />
+    <h3>"${compliments[index]}"</h3>
+    <div>
+      <cite>Hugged 0 times</cite>
+      <button>🤗 it</button>
+    </div>
+  </li>`
+
+
+  }
+  
+});
+
