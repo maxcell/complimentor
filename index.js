@@ -176,6 +176,88 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
   }
+
+
+
+  // Template for adding an eventlistener
+  // 1. Find the element you want to add the listener to
+  // 2. Determine the event type to listen for
+  // 3. What should happen when that fires off
+  // const firstButton = document.querySelector("button")
+  // firstButton.addEventListener('click', function(e){
+  //   alert('HELLO!')
+  // })
+
+  // document.addEventListener('click', function(event){
+  //   console.log('Clicked the page')
+  //   console.log(event["target"])
+
+  //   // Create Element
+  //   // const imgTag = document.createElement('img')
+  //   // imgTag.src = "https://corgiorgy.com/corgiswimflip.gif"
+  //   // imgTag.style.width = "75px"
+  //   // // Add the element to the page
+  //   // // event["target"].appendChild(imgTag)
+  //   // event.target.appendChild(imgTag)
+
+  //   // event["target"].innerHTML =`<img style="width:75px;" src="https://corgiorgy.com/corgiswimflip.gif"/>` // Setting the value to be just the img
+
+  //   // Setting the value to be what was there + the img
+  //   event["target"].innerHTML = event["target"].innerHTML + `<img style="width:75px;" src="https://corgiorgy.com/corgiswimflip.gif"/>`
+  //   // event["target"].innerHTML += `<img style="width:75px;" src="https://corgiorgy.com/corgiswimflip.gif"/>`
+  // })
+
+
+  // Event Delegation
+  // Perform an action if it matches to this tag, the event listener is attached to the PARENT
+  // document.addEventListener('mouseover', function(e){
+  //   if(e.target.tagName === "LI"){
+  //     console.log('event: ', e.target)
+  //     debugger // binding.pry || byebug
+  //     e.target.style.backgroundColor = "pink"
+  //   }
+  // })
+
+  // Logic for updating the like count
+  document.addEventListener('click', function(beef){
+    if(beef.target.tagName === "BUTTON"){
+      
+      let hugElement = beef.target.parentElement.children[0]
+      // let hugElement = beef.target.previousElementSibling
+      // debugger
+
+      let hugCount = parseInt(hugElement.innerText.split(" ")[1], 10)
+      hugCount += 1
+      
+      hugElement.innerText = `Hugged ${hugCount} times`
+      
+      console.log(hugCount)
+    }
+  })
+
+
+  // Logic to add a compliment
+  document.querySelector('form').addEventListener('submit', function(e){
+    // Stop the page from refreshing
+    e.preventDefault()
+    
+    
+    // Find the input tags and their values
+    const compliment = e.target.children[0].value // DO NOT USE INNERTEXT FOR INPUTS
+    const imgUrl = e.target.children[1].value // USE VALUE
+
+    // Tell the page to update with the values from our forms
+    const ulTag = document.querySelector('ul')
+    // Needs to be added to the UL tag
+    ulTag.innerHTML = `<li>
+    <img width="200" src='${imgUrl}' />
+    <h3>"${compliment}"</h3>
+    <div>
+      <cite>Hugged 0 times</cite>
+      <button>🤗 it</button>
+    </div>
+  </li>` + ulTag.innerHTML
+  })
   
 });
 

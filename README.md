@@ -30,11 +30,11 @@ As a user I now have...
 # Deliverables
 As a user I want...
 *FAKE*
-* to find my first button and alert "HELLO!" when I click it
-* anything I click on should have a corgi added to it (link: <https://corgiorgy.com/corgiswimflip.gif>)
-* to hover over any li and have it's background color change to `pink`
+* ~to find my first button and alert "HELLO!" when I click it~
+* ~anything I click on should have a corgi added to it (link: <https://corgiorgy.com/corgiswimflip.gif>)~
+* ~to hover over any li and have it's background color change to `pink`~
 
 *REAL*
-* to be able to add a "hug" to a compliment and see my hug count go up accordingly
+* ~to be able to add a "hug" to a compliment and see my hug count go up accordingly~
 * to add my own compliments
 * to favorite the best compliments
